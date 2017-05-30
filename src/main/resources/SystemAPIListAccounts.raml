@@ -1,0 +1,34 @@
+#%RAML 0.8
+title: SystemAPIListAccounts
+version: "1.0"
+baseUri: "http://systemapilistaccounts.eu.cloudhub.io/api"
+/getAccounts: 
+    displayName: Get a list all accounts for a customer
+    get: 
+        description: This will send a mesage to a queue and get a list of accounts back
+        queryParameters: 
+            customerID: 
+                description: Customer ID
+                type: string
+                required: true
+                repeat: false
+                example: AJD101
+        responses: 
+            "200": 
+                body: 
+                    application/json: 
+                        example: |
+                            [
+                              {
+                                "accountType": "Current Account",
+                                "accountNumber": "11111111"
+                              },
+                              {
+                                "accountType": "Savings Account",
+                                "accountNumber": "22222222"
+                              },
+                              {
+                                "accountType": "Loan Account",
+                                "accountNumber": "33333333"
+                              }
+                            ]

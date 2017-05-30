@@ -1,0 +1,34 @@
+#%RAML 0.8
+title: ProcessAPIGetAccountBalances
+version: "1.0"
+baseUri: "http://processapigetaccountbalances.eu.cloudhub.io/api"
+/getBalances: 
+    displayName: Get all balances on all accounts for a customer
+    get: 
+        description: This will send a mesage to a queue and get a list of accounts back
+        queryParameters: 
+            customerID: 
+                description: Customer ID
+                type: string
+                required: true
+                repeat: false
+                example: AJD101
+        responses: 
+            "200": 
+                body: 
+                    application/json: 
+                        example: |
+                            [
+                              {
+                                "Current Account": "11111111",
+                                "Balance": 123456.78
+                              },
+                              {
+                                "Savings Account": "22222222",
+                                "Balance": 123.45
+                              },
+                              {
+                                "Loan Account": "33333333",
+                                "Balance": 2345.67
+                              }
+                            ]

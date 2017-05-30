@@ -1,0 +1,25 @@
+#%RAML 1.0
+title: SystemAPICoreBankingBalance
+version: 1.0
+baseUri: http://systemapicorebankingbalance.eu.cloudhub.io/api
+
+/getBalance:
+  displayName: Get Account Balance
+  get:
+    description: This will retrieve the balance for a given account
+    queryParameters:
+      accountID:
+        description: Account ID
+        required: true
+        type: string
+        example: "11111111"
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "accountBalance": 123456.78
+                }
+              ]
