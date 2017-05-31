@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
-	<artifactId>ProcessAPIGetAccountBalances</artifactId>
+	<artifactId>ProcessAPIGetCreditCardBalances</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule</packaging>
 	<name>Mule ProcessAPIGetAccountBalances Application</name>
